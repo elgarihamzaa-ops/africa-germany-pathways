@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { CATEGORIES, LEVELS, type Listing } from "@/lib/listings";
 
-export type JobSearch = { q?: string; city?: string; cat?: string; start?: string; level?: string; sort?: "new" | "deadline" | "start" };
+export type JobSearch = { q?: string | undefined; city?: string | undefined; cat?: string | undefined; start?: string | undefined; level?: string | undefined; sort?: "new" | "deadline" | "start" | undefined };
 
 export function startOptions(list: Listing[]) {
   return [...new Set(list.map((l) => l.start_date?.slice(0, 7)).filter(Boolean) as string[])].sort();

@@ -65,6 +65,7 @@ function AuthForm() {
       : await supabase.auth.signUp({ email, password: pw, options: { emailRedirectTo: window.location.origin + "/admin" } });
     if (error) return toast.error(error.message);
     if (mode === "up" && !data.session) toast.success("Bitte E-Mail bestätigen.");
+    return undefined;
   };
   return (
     <div className="mx-auto max-w-sm px-4 py-16">

@@ -7,12 +7,12 @@ import { SearchFilters, applyFilters, type JobSearch } from "@/components/Search
 
 export const Route = createFileRoute("/jobs/")({
   validateSearch: (s: Record<string, unknown>): JobSearch => ({
-    q: (s.q as string) || undefined,
-    city: (s.city as string) || undefined,
-    cat: (s.cat as string) || undefined,
-    start: (s.start as string) || undefined,
-    level: (s.level as string) || undefined,
-    sort: (["new", "deadline", "start"].includes(s.sort as string) ? s.sort : undefined) as JobSearch["sort"],
+    q: (s["q"] as string) || undefined,
+    city: (s["city"] as string) || undefined,
+    cat: (s["cat"] as string) || undefined,
+    start: (s["start"] as string) || undefined,
+    level: (s["level"] as string) || undefined,
+    sort: (["new", "deadline", "start"].includes(s["sort"] as string) ? s["sort"] : undefined) as JobSearch["sort"],
   }),
   head: () => ({
     meta: [
